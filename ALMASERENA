@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alma Serena | Tienda Esotérica y El Caldero</title>
+
+<meta name="description" content="Productos esotéricos, ebooks, recursos espirituales, tips brujiles y contenido educativo.">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f8f6f2;
+color:#333;
+line-height:1.6;
+}
+
+header{
+background:#ffffff;
+padding:20px;
+position:sticky;
+top:0;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+z-index:999;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1200px;
+margin:auto;
+}
+
+.logo{
+font-size:2rem;
+font-weight:bold;
+color:#8a6a2d;
+}
+
+.menu a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+
+.hero{
+padding:100px 20px;
+text-align:center;
+background:linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)),
+url('https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+max-width:800px;
+margin:auto;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 28px;
+background:#8a6a2d;
+color:white;
+text-decoration:none;
+border-radius:6px;
+}
+
+section{
+padding:60px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+h2{
+margin-bottom:20px;
+color:#8a6a2d;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,.08);
+}
+
+footer{
+background:#222;
+color:white;
+padding:40px 20px;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">Alma Serena</div>
+
+<div class="menu">
+<a href="#">Inicio</a>
+<a href="#">Tienda</a>
+<a href="#">Ebooks</a>
+<a href="#">El Caldero</a>
+<a href="#">Tips Brujiles</a>
+<a href="#">Blog</a>
+<a href="#">Contacto</a>
+</div>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Alma Serena</h1>
+
+<p>
+Productos esotéricos, ebooks, recursos espirituales y herramientas
+para acompañar tu crecimiento personal.
+</p>
+
+<a href="#" class="btn">Ver Tienda</a>
+
+</section>
+
+<section>
+
+<h2>Quiénes Somos</h2>
+
+<p>
+Alma Serena es un espacio dedicado a compartir productos,
+contenido educativo y recursos espirituales para acompañar procesos
+de crecimiento personal, bienestar y exploración simbólica.
+</p>
+
+</section>
+
+<section>
+
+<h2>Categorías Destacadas</h2>
+
+<div class="grid">
+
+<div class="card">Velas Ritualizadas</div>
+<div class="card">Sahumerios</div>
+<div class="card">Minerales</div>
+<div class="card">Amuletos</div>
+<div class="card">Prosperidad</div>
+<div class="card">Protección</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Ebooks</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Magia Ritual</h3>
+<p>Espacio para futuros ebooks.</p>
+</div>
+
+<div class="card">
+<h3>Magia Simpática</h3>
+<p>Espacio para futuros ebooks.</p>
+</div>
+
+<div class="card">
+<h3>Magia del Caos</h3>
+<p>Espacio para futuros ebooks.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>El Caldero</h2>
+
+<p>
+Biblioteca educativa dedicada a simbolismo, tradiciones esotéricas,
+historia de la magia, correspondencias y recursos de estudio.
+</p>
+
+<br>
+
+<p>
+<strong>Aviso:</strong>
+Este contenido tiene fines educativos, culturales e informativos.
+No se promueven pactos ni compromisos con entidades de ninguna naturaleza.
+</p>
+
+</section>
+
+<section>
+
+<h2>Tips Brujiles</h2>
+
+<div class="grid">
+
+<div class="card">Uso de Velas</div>
+<div class="card">Limpieza Energética</div>
+<div class="card">Correspondencias</div>
+<div class="card">Fases Lunares</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Blog Comunitario</h2>
+
+<p>
+Comparte experiencias, comentarios y aprendizajes con la comunidad.
+</p>
+
+</section>
+
+<section>
+
+<h2>Testimonios</h2>
+
+<div class="grid">
+
+<div class="card">
+★★★★★
+<p>Excelente atención y productos.</p>
+</div>
+
+<div class="card">
+★★★★★
+<p>Muy buena experiencia de compra.</p>
+</div>
+
+<div class="card">
+★★★★★
+<p>Material educativo muy completo.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Preguntas Frecuentes</h2>
+
+<p><strong>¿Realizan envíos?</strong> Sí, mediante Correo Argentino y OCA.</p>
+
+<p><strong>¿Aceptan Mercado Pago?</strong> Sí.</p>
+
+<p><strong>¿Venden ebooks?</strong> Sí, en formato digital.</p>
+
+</section>
+
+<section>
+
+<h2>Políticas</h2>
+
+<p>
+Productos por encargo: se solicita una seña del 30%.
+El saldo restante deberá abonarse antes del envío.
+La seña no es reembolsable en caso de cancelación por parte del cliente.
+</p>
+
+</section>
+
+<footer>
+
+<h3>Alma Serena</h3>
+
+<p>
+Tienda Esotérica • Ebooks • Recursos Espirituales
+</p>
+
+<p>
+© 2026 Todos los derechos reservados.
+</p>
+
+</footer>
+
+<a
+class="whatsapp"
+href="https://wa.me/TUNUMERO"
+target="_blank">
+WhatsApp
+</a>
+
+</body>
+</html>
