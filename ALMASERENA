@@ -1,335 +1,455 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alma Serena | Tienda Esotérica y El Rincón del Hechicero</title>
+    <meta name="description" content="Productos esotéricos, ebooks, recursos espirituales, tips brujiles y contenido educativo.">
+    
+    <!-- Google Fonts para el toque místico y elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-<title>Alma Serena | Tienda Esotérica y El Caldero</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<meta name="description" content="Productos esotéricos, ebooks, recursos espirituales, tips brujiles y contenido educativo.">
+        body {
+            background: #f8f6f2;
+            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+        }
 
-<style>
+        header {
+            background: #ffffff;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,.05);
+            z-index: 999;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
-}
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-body{
-background:#f8f6f2;
-color:#333;
-line-height:1.6;
-}
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #8a6a2d;
+            text-decoration: none;
+        }
 
-header{
-background:#ffffff;
-padding:20px;
-position:sticky;
-top:0;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
-z-index:999;
-}
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-max-width:1200px;
-margin:auto;
-}
+        .menu a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
 
-.logo{
-font-size:2rem;
-font-weight:bold;
-color:#8a6a2d;
-}
+        .menu a:hover {
+            color: #8a6a2d;
+        }
 
-.menu a{
-margin-left:20px;
-text-decoration:none;
-color:#333;
-font-weight:bold;
-}
+        .hero {
+            padding: 120px 20px;
+            text-align: center;
+            background: linear-gradient(rgba(248, 246, 242, 0.85), rgba(248, 246, 242, 0.85)),
+            url('https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+        }
 
-.hero{
-padding:100px 20px;
-text-align:center;
-background:linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)),
-url('https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
-}
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: #222;
+            margin-bottom: 20px;
+        }
 
-.hero h1{
-font-size:3rem;
-margin-bottom:20px;
-}
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: auto;
+            color: #555;
+        }
 
-.hero p{
-font-size:1.2rem;
-max-width:800px;
-margin:auto;
-}
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 35px;
+            background: #8a6a2d;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(138, 106, 45, 0.3);
+            transition: transform 0.3s, background 0.3s;
+        }
 
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:14px 28px;
-background:#8a6a2d;
-color:white;
-text-decoration:none;
-border-radius:6px;
-}
+        .btn:hover {
+            background: #705524;
+            transform: translateY(-2px);
+        }
 
-section{
-padding:60px 20px;
-max-width:1200px;
-margin:auto;
-}
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-h2{
-margin-bottom:20px;
-color:#8a6a2d;
-}
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #8a6a2d;
+            text-align: center;
+        }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: #8a6a2d;
+            margin: 10px auto 0;
+        }
 
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,.08);
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
 
-footer{
-background:#222;
-color:white;
-padding:40px 20px;
-text-align:center;
-}
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
 
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-}
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(138, 106, 45, 0.1);
+        }
 
-</style>
+        .card h3 {
+            font-family: 'Cinzel', serif;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .destacado {
+            background: #fffdf9;
+            border: 1px solid #eaddca;
+        }
+
+        .caja-hechicero {
+            background: #eae3d5;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #d4c5b3;
+        }
+
+        /* Formulario de Contacto */
+        .form-contacto {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.03);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #8a6a2d;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: #8a6a2d;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #705524;
+        }
+
+        /* Logos de envíos y pagos */
+        .logos-confianza {
+            background: #ffffff;
+            padding: 40px 20px;
+            border-top: 1px solid #eaddca;
+            text-align: center;
+        }
+
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .logos-container img {
+            height: 40px;
+            object-fit: contain;
+            filter: grayscale(20%);
+            transition: filter 0.3s;
+        }
+
+        .logos-container img:hover {
+            filter: grayscale(0%);
+        }
+
+        footer {
+            background: #1a1917;
+            color: #d1c7bd;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        footer h3 {
+            font-family: 'Cinzel', serif;
+            color: #8a6a2d;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 20px rgba(0,0,0,.2);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            nav { justify-content: center; text-align: center; }
+            .menu { justify-content: center; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 
 <body>
 
+<!-- 1. HEADER & MENÚ -->
 <header>
-
-<nav>
-
-<div class="logo">Alma Serena</div>
-
-<div class="menu">
-<a href="#">Inicio</a>
-<a href="#">Tienda</a>
-<a href="#">Ebooks</a>
-<a href="#">El Caldero</a>
-<a href="#">Tips Brujiles</a>
-<a href="#">Blog</a>
-<a href="#">Contacto</a>
-</div>
-
-</nav>
-
+    <nav>
+        <a href="#" class="logo">Alma Serena</a>
+        <div class="menu">
+            <a href="#">Inicio</a>
+            <a href="#quienes-somos">Quiénes Somos</a>
+            <a href="#productos">Productos</a>
+            <a href="#ebooks">Ebooks</a>
+            <a href="#el-rincon">El Rincón del Hechicero</a>
+            <a href="#tips">Tips Brujiles</a>
+            <a href="#blog">Blog</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
 </header>
 
+<!-- 2. PÁGINA DE INICIO IMPACTANTE (HERO) -->
 <section class="hero">
-
-<h1>Alma Serena</h1>
-
-<p>
-Productos esotéricos, ebooks, recursos espirituales y herramientas
-para acompañar tu crecimiento personal.
-</p>
-
-<a href="#" class="btn">Ver Tienda</a>
-
+    <h1>Alma Serena</h1>
+    <p>Productos esotéricos, ebooks, recursos espirituales y herramientas para acompañar tu crecimiento personal y despertar tu magia interior.</p>
+    <a href="#productos" class="btn">Ver Catálogo</a>
 </section>
 
-<section>
-
-<h2>Quiénes Somos</h2>
-
-<p>
-Alma Serena es un espacio dedicado a compartir productos,
-contenido educativo y recursos espirituales para acompañar procesos
-de crecimiento personal, bienestar y exploración simbólica.
-</p>
-
+<!-- 3. QUIÉNES SOMOS -->
+<section id="quienes-somos">
+    <h2>Quiénes Somos</h2>
+    <p style="text-align: center; max-width: 800px; margin: auto; color: #555;">
+        Alma Serena es un espacio dedicado a compartir productos artesanales, contenido educativo y recursos espirituales para acompañar procesos de crecimiento personal, bienestar y exploración simbólica. Buscamos conectar la sabiduría antigua con tu vida cotidiana de manera simple y real.
+    </p>
 </section>
 
-<section>
-
-<h2>Categorías Destacadas</h2>
-
-<div class="grid">
-
-<div class="card">Velas Ritualizadas</div>
-<div class="card">Sahumerios</div>
-<div class="card">Minerales</div>
-<div class="card">Amuletos</div>
-<div class="card">Prosperidad</div>
-<div class="card">Protección</div>
-
-</div>
-
+<!-- 4. CATÁLOGO DE PRODUCTOS (CATEGORÍAS) -->
+<section id="productos">
+    <h2>Catálogo de Productos</h2>
+    <div class="grid">
+        <div class="card">✨ <h3>Velas Ritualizadas</h3><p style="color:#666; font-size:0.9rem; margin-top:10px;">Intencionadas para amor, prosperidad y protección.</p></div>
+        <div class="card">🌿 <h3>Sahumerios</h3><p style="color:#666; font-size:0.9rem; margin-top:10px;">Hierbas naturales para sahumado y limpieza energética.</p></div>
+        <div class="card">🔮 <h3>Minerales</h3><p style="color:#666; font-size:0.9rem; margin-top:10px;">Cristales y piedras energéticas para armonizar tus espacios.</p></div>
+        <div class="card">🧿 <h3>Amuletos</h3><p style="color:#666; font-size:0.9rem; margin-top:10px;">Talismanes de resguardo y canalizadores de energía.</p></div>
+        <div class="card">💰 <h3>Prosperidad</h3><p style="color:#666; font-size:0.9rem; margin-top:10px;">Kits armados para atraer la abundancia a tu vida.</p></div>
+        <div class="card">🛡️ <h3>Protección</h3><p style="color:#666; font-size:0.9rem; margin-top:10px;">Herramientas para cortar energías densas y proteger tu hogar.</p></div>
+    </div>
 </section>
 
-<section>
-
-<h2>Ebooks</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Magia Ritual</h3>
-<p>Espacio para futuros ebooks.</p>
-</div>
-
-<div class="card">
-<h3>Magia Simpática</h3>
-<p>Espacio para futuros ebooks.</p>
-</div>
-
-<div class="card">
-<h3>Magia del Caos</h3>
-<p>Espacio para futuros ebooks.</p>
-</div>
-
-</div>
-
+<!-- 5. EBOOKS -->
+<section id="ebooks">
+    <h2>Ebooks y Guías Digitales</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Magia Ritual</h3>
+            <p style="color:#777; margin-top: 10px;">Aprende las bases esenciales para armar tus propios altares y rituales efectivos.</p>
+        </div>
+        <div class="card">
+            <h3>Magia Simpática</h3>
+            <p style="color:#777; margin-top: 10px;">El uso de correspondencias, hierbas y elementos cotidianos con fines mágicos.</p>
+        </div>
+        <div class="card">
+            <h3>Magia del Caos</h3>
+            <p style="color:#777; margin-top: 10px;">Una introducción informativa y educativa a esta corriente moderna de transmutación.</p>
+        </div>
+    </div>
 </section>
 
-<section>
-
-<h2>El Caldero</h2>
-
-<p>
-Biblioteca educativa dedicada a simbolismo, tradiciones esotéricas,
-historia de la magia, correspondencias y recursos de estudio.
-</p>
-
-<br>
-
-<p>
-<strong>Aviso:</strong>
-Este contenido tiene fines educativos, culturales e informativos.
-No se promueven pactos ni compromisos con entidades de ninguna naturaleza.
-</p>
-
+<!-- 6. EL RINCÓN DEL HECHICERO -->
+<section id="el-rincon">
+    <div class="caja-hechicero">
+        <h2 style="color: #222; margin-bottom: 15px;">El Rincón del Hechicero</h2>
+        <p>
+            Nuestra biblioteca educativa dedicada por completo a la divulgación de simbolismo, tradiciones esotéricas, historia de la magia, correspondencias sagradas y recursos de estudio para buscadores espirituales.
+        </p>
+        <br>
+        <p style="font-size: 0.85rem; color: #666; font-style: italic;">
+            <strong>Aviso:</strong> Este contenido tiene fines estrictamente educativos, culturales e informativos. No se promueven pactos ni compromisos con entidades de ninguna naturaleza.
+        </p>
+    </div>
 </section>
 
-<section>
-
-<h2>Tips Brujiles</h2>
-
-<div class="grid">
-
-<div class="card">Uso de Velas</div>
-<div class="card">Limpieza Energética</div>
-<div class="card">Correspondencias</div>
-<div class="card">Fases Lunares</div>
-
-</div>
-
+<!-- 7. TIPS BRUJILES -->
+<section id="tips">
+    <h2>Tips Brujiles</h2>
+    <div class="grid">
+        <div class="card destacado">🕯️ <h4>Uso de Velas</h4><p style="font-size:0.85rem; color:#666; margin-top:5px;">Aprende a leer la llama y los restos de cera.</p></div>
+        <div class="card destacado">✨ <h4>Limpieza Energética</h4><p style="font-size:0.85rem; color:#666; margin-top:5px;">Métodos para sahumar tu casa correctamente.</p></div>
+        <div class="card destacado">📜 <h4>Correspondencias</h4><p style="font-size:0.85rem; color:#666; margin-top:5px;">Días, colores y hierbas para cada intención.</p></div>
+        <div class="card destacado">🌙 <h4>Fases Lunares</h4><p style="font-size:0.85rem; color:#666; margin-top:5px;">Cómo influye el ciclo lunar en tus energías.</p></div>
+    </div>
 </section>
 
-<section>
-
-<h2>Blog Comunitario</h2>
-
-<p>
-Comparte experiencias, comentarios y aprendizajes con la comunidad.
-</p>
-
+<!-- 8. BLOG -->
+<section id="blog">
+    <h2>Blog Comunitario</h2>
+    <p style="text-align: center; color: #555; max-width: 600px; margin: auto;">
+        Próximamente compartiremos artículos detallados sobre baños espirituales, talismanes e historias de antiguas tradiciones para aprender en comunidad.
+    </p>
 </section>
 
-<section>
-
-<h2>Testimonios</h2>
-
-<div class="grid">
-
-<div class="card">
-★★★★★
-<p>Excelente atención y productos.</p>
-</div>
-
-<div class="card">
-★★★★★
-<p>Muy buena experiencia de compra.</p>
-</div>
-
-<div class="card">
-★★★★★
-<p>Material educativo muy completo.</p>
-</div>
-
-</div>
-
+<!-- 9. POLÍTICAS DE LA TIENDA -->
+<section id="politicas" style="max-width: 800px;">
+    <h2>Políticas de Compra</h2>
+    <div style="background: #f1ede6; padding: 30px; border-radius: 8px; border-left: 4px solid #8a6a2d;">
+        <p>
+            <strong>Productos por encargo:</strong> Al ser piezas artesanales y personalizadas, se solicita una seña del <strong>30%</strong> para iniciar la producción. El saldo restante deberá abonarse antes de realizar el envío. 
+        </p>
+        <p style="margin-top: 10px; font-size: 0.85rem; color: #666;">
+            * Nota: La seña no es reembolsable en caso de cancelación del pedido por parte del cliente.
+        </p>
+    </div>
 </section>
 
-<section>
-
-<h2>Preguntas Frecuentes</h2>
-
-<p><strong>¿Realizan envíos?</strong> Sí, mediante Correo Argentino y OCA.</p>
-
-<p><strong>¿Aceptan Mercado Pago?</strong> Sí.</p>
-
-<p><strong>¿Venden ebooks?</strong> Sí, en formato digital.</p>
-
+<!-- 10. FORMULARIO DE CONTACTO -->
+<section id="contacto">
+    <h2>Contacto</h2>
+    <div class="form-contacto">
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje o Consulta</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Enviar Mensaje</button>
+        </form>
+    </div>
 </section>
 
-<section>
-
-<h2>Políticas</h2>
-
-<p>
-Productos por encargo: se solicita una seña del 30%.
-El saldo restante deberá abonarse antes del envío.
-La seña no es reembolsable en caso de cancelación por parte del cliente.
-</p>
-
+<!-- LOGOS DE MEDIOS DE PAGO Y ENVÍO (ARGENTINA) -->
+<section class="logos-confianza">
+    <div class="logos-container">
+        <img src="https://imgmp.mpheaders.com/v1/brands/mercadopago.svg" alt="Mercado Pago">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Logotipo_de_Correo_Argentino.svg" alt="Correo Argentino">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Oca_logo.svg" alt="OCA">
+    </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-
-<h3>Alma Serena</h3>
-
-<p>
-Tienda Esotérica • Ebooks • Recursos Espirituales
-</p>
-
-<p>
-© 2026 Todos los derechos reservados.
-</p>
-
+    <h3>Alma Serena</h3>
+    <p style="margin-bottom: 15px;">Tienda Esotérica • Ebooks • Recursos Espirituales</p>
+    <p style="font-size: 0.8rem; opacity: 0.6;">© 2026 Todos los derechos reservados.</p>
 </footer>
 
-<a
-class="whatsapp"
-href="https://wa.me/TUNUMERO"
-target="_blank">
-WhatsApp
+<!-- BOTÓN DE WHATSAPP FLOTANTE -->
+<!-- Reemplaza TUNUMERO por tu celular con código de área (Ej: 5491123456789) -->
+<a class="whatsapp" href="https://wa.me/TUNUMERO" target="_blank">
+    💬 WhatsApp
 </a>
 
 </body>
