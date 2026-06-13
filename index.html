@@ -129,8 +129,8 @@
 
         .btn-comprar:hover { background: #705524; }
 
-        /* --- NEWSLETTER --- */
-        .newsletter-box {
+        /* --- SECCIONES DE CAJAS ENLACE --- */
+        .newsletter-box, .contacto-box {
             background: #f0ecdf;
             padding: 40px 20px;
             border-radius: 12px;
@@ -139,22 +139,25 @@
             max-width: 800px;
             border: 1px solid #e1dbcb;
         }
-        .newsletter-box h3 { font-family: 'Cinzel', serif; margin-bottom: 10px; }
-        .newsletter-form {
-            display: flex;
-            max-width: 500px;
-            margin: 20px auto 0 auto;
-            gap: 10px;
-        }
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
+        .newsletter-box h3, .contacto-box h3 { font-family: 'Cinzel', serif; margin-bottom: 12px; }
+        .newsletter-box p, .contacto-box p { margin-bottom: 20px; }
 
-        /* --- CONTACTO Y RESEÑAS --- */
-        .form-contacto, .form-comentario {
+        .btn-whatsapp-directo {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: #8a6a2d;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-whatsapp-directo:hover { background-color: #705524; }
+
+        /* --- RESEÑAS DE CLIENTES --- */
+        .form-comentario {
             max-width: 600px;
             margin: 0 auto;
             background: white;
@@ -202,26 +205,20 @@
     <p>Tienda Esotérica & El Rincón del Hechicero</p>
 </header>
 
-<!-- CATÁLOGO DIRECTO (SIN CUPONES NI PUNTOS) -->
+<!-- CATÁLOGO DIRECTO -->
 <section id="productos">
     <h2>Catálogo de Productos</h2>
     <div class="grid" id="contenedor-productos"></div>
 </section>
 
-<!-- NEWSLETTER -->
+<!-- NEWSLETTER BRUJIL DIRECTO A WHATSAPP -->
 <section id="seccion-newsletter">
     <div class="newsletter-box">
         <h3>📬 El Rincón del Hechicero (Newsletter)</h3>
-        <p>Dejanos tu mail y recibí gratis cada semana rituales, tips de astrología y promociones exclusivas.</p>
-        
-        <form class="newsletter-form" action="https://formsubmit.co/almaserena516@gmail.com" method="POST" onsubmit="trackearMetrica('newsletter')">
-            <input type="hidden" name="_subject" value="✨ ¡Nueva Suscripción al Newsletter de Alma Serena!">
-            <input type="hidden" name="_next" value="https://almaserena516-bit.github.io/ELCALDERO/">
-            <input type="hidden" name="_captcha" value="false">
-            
-            <input type="email" name="Email_Suscrito" placeholder="Tu mejor correo electrónico" required>
-            <button type="submit" style="height:46px; background:#8a6a2d; border:none; color:white; padding:0 20px; border-radius:6px; font-weight:bold; cursor:pointer;">Unirme al Altar</button>
-        </form>
+        <p>¿Querés recibir gratis cada semana rituales, tips de astrología y promociones exclusivas directamente en tu celular?</p>
+        <a id="btn-newsletter-wa" href="#" target="_blank" class="btn-whatsapp-directo" onclick="trackearMetrica('newsletter')">
+            ✨ Unirme al Altar por WhatsApp
+        </a>
     </div>
 </section>
 
@@ -256,27 +253,15 @@
     <div class="lista-comentarios" id="box-comentarios"></div>
 </section>
 
-<!-- FORMULARIO DE CONTACTO -->
+<!-- CONTACTO DIRECTO A WHATSAPP -->
 <section id="contacto">
     <h2>Contacto</h2>
-    <div class="form-contacto">
-        <form action="https://formsubmit.co/almaserena516@gmail.com" method="POST" onsubmit="trackearMetrica('mensajes_contacto')">
-            <input type="hidden" name="_next" value="https://almaserena516-bit.github.io/ELCALDERO/">
-            <input type="hidden" name="_captcha" value="false">
-            <div class="form-group">
-                <label>Nombre Completo</label>
-                <input type="text" name="Nombre" placeholder="Tu nombre" required>
-            </div>
-            <div class="form-group">
-                <label>Correo Electrónico</label>
-                <input type="email" name="Email" placeholder="tu@email.com" required>
-            </div>
-            <div class="form-group">
-                <label>Mensaje o Consulta</label>
-                <textarea name="Mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Enviar Mensaje</button>
-        </form>
+    <div class="contacto-box">
+        <h3>🔮 ¿Tenés dudas o consultas personalizadas?</h3>
+        <p>Hacé clic acá abajo para chatear directamente conmigo. Te asesoro con la mejor energía en lo que necesites.</p>
+        <a id="btn-contacto-wa" href="#" target="_blank" class="btn-whatsapp-directo" onclick="trackearMetrica('mensajes_contacto')">
+            💬 Chatear Directo por WhatsApp
+        </a>
     </div>
 </section>
 
@@ -303,7 +288,7 @@
             <div class="metrica-numero" id="m-news">0</div>
         </div>
         <div class="metrica-card">
-            <p style="font-size:0.8rem; font-weight:600;">Mails de Contacto</p>
+            <p style="font-size:0.8rem; font-weight:600;">Consultas de Contacto</p>
             <div class="metrica-numero" id="m-mail">0</div>
         </div>
     </div>
@@ -319,7 +304,7 @@
 </section>
 
 <!-- BOTÓN DE WHATSAPP FLOTANTE -->
-<a class="whatsapp" href="https://wa.me/5493424483036" target="_blank" onclick="trackearMetrica('clics_whatsapp')">
+<a id="btn-flotante-wa" class="whatsapp" href="#" target="_blank" onclick="trackearMetrica('clics_whatsapp')">
     💬 WhatsApp
 </a>
 
@@ -330,7 +315,7 @@
     // LISTA DE PRODUCTOS Y PRECIOS DIRECTOS
     const misProductos = [
       { "titulo": "Vela Ritualizada de Prosperidad", "descripcion": "Intencionada con hierbas y cristales para atraer abundancia.", "precio": "8.500", "imagen": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=500&q=80" },
-      { "titulo": "Kit de Sahumado Ancestral", "descripcion": "Include sahumador de barro, hierbas de limpieza y carbones.", "precio": "12.000", "imagen": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80" },
+      { "titulo": "Kit de Sahumado Ancestral", "descripcion": "Incluye sahumador de barro, hierbas de limpieza y carbones.", "precio": "12.000", "imagen": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80" },
       { "titulo": "Piedra Amatista Natural", "descripcion": "Ideal para transmutar energías y colocar en tu altar.", "precio": "4.200", "imagen": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?auto=format&fit=crop&w=500&q=80" }
     ];
 
@@ -357,6 +342,20 @@
             if(document.getElementById('m-news')) document.getElementById('m-news').innerText = datos.newsletter || 0;
             if(document.getElementById('m-mail')) document.getElementById('m-mail').innerText = datos.mensajes_contacto || 0;
         }
+    }
+
+    function configurarEnlacesEstaticos() {
+        // Configura el link del newsletter
+        const txtNews = encodeURIComponent("¡Hola Alma Serena! Quiero unirme al Newsletter para recibir los tips de astrología y rituales ✨");
+        document.getElementById('btn-newsletter-wa').href = "https://wa.me/" + WHATSAPP_CELULAR + "?text=" + txtNews;
+
+        // Configura el link de contacto general
+        const txtContacto = encodeURIComponent("¡Hola Alma Serena! Tengo una consulta sobre los productos de la tienda 🔮");
+        document.getElementById('btn-contacto-wa').href = "https://wa.me/" + WHATSAPP_CELULAR + "?text=" + txtContacto;
+
+        // Configura el botón flotante
+        const txtFlotante = encodeURIComponent("¡Hola Alma Serena! Vengo desde la página web 💻");
+        document.getElementById('btn-flotante-wa').href = "https://wa.me/" + WHATSAPP_CELULAR + "?text=" + txtFlotante;
     }
 
     function cargarCatalogo() {
@@ -419,6 +418,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         cargarCatalogo();
         cargarComentarios();
+        configurarEnlacesEstaticos();
         iniciarMetricas();
     });
 </script>
