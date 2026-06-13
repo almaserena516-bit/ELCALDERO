@@ -6,6 +6,7 @@
     <title>Alma Serena | Tienda Esotérica y El Rincón del Hechicero</title>
     <meta name="description" content="Productos esotéricos, ebooks, recursos espirituales, tips brujiles y contenido educativo.">
     
+    <!-- Google Fonts para el toque místico y elegante -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -156,41 +157,6 @@
 
         .btn-comprar:hover { background: #705524; }
 
-        /* --- FASE 2: CUPONES DE DESCUENTO --- */
-        .cupon-box {
-            background: white;
-            color: #1a1510;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 40px;
-            border: 2px dashed #8a6a2d;
-        }
-        .cupon-input-group {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .cupon-input-group input {
-            padding: 10px;
-            border-radius: 6px;
-            border: 1px solid #8a6a2d;
-            width: 200px;
-            text-transform: uppercase;
-            font-weight: bold;
-            text-align: center;
-        }
-        .btn-cupon {
-            background: #8a6a2d;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
         /* --- FASE 3: NEWSLETTER BRUJIL --- */
         .newsletter-box {
             background: #f0ecdf;
@@ -264,6 +230,7 @@
     <p>Tienda Esotérica & El Rincón del Hechicero</p>
 </header>
 
+<!-- CLUB DE FIDELIZACIÓN (PUNTOS) -->
 <section id="fidelizacion">
     <div class="fidelidad-box">
         <h3>✨ Club de Almas Serena ✨</h3>
@@ -274,22 +241,13 @@
     </div>
 </section>
 
-<section id="seccion-cupones">
-    <div class="cupon-box">
-        <h3>✨ ¿Tenés un Cupón Místico? ✨</h3>
-        <div class="cupon-input-group">
-            <input type="text" id="input-cupon" placeholder="Ej: MAGIA10">
-            <button class="btn-cupon" onclick="validarCupon()">Aplicar</button>
-        </div>
-        <div id="mensaje-cupon" style="margin-top:10px; font-weight:bold;"></div>
-    </div>
-</section>
-
+<!-- SECCIÓN CATÁLOGO -->
 <section id="productos">
     <h2>Catálogo de Productos</h2>
     <div class="grid" id="contenedor-productos"></div>
 </section>
 
+<!-- NEWSLETTER BRUJIL -->
 <section id="seccion-newsletter">
     <div class="newsletter-box">
         <h3>📬 El Rincón del Hechicero (Newsletter)</h3>
@@ -301,11 +259,12 @@
             <input type="hidden" name="_captcha" value="false">
             
             <input type="email" name="Email_Suscrito" placeholder="Tu mejor correo electrónico" required>
-            <button type="submit" class="btn-cupon" style="height:46px;">Unirme al Altar</button>
+            <button type="submit" class="btn-cupon" style="height:46px; background:#8a6a2d; border:none; color:white; padding:0 20px; border-radius:6px; font-weight:bold; cursor:pointer;">Unirme al Altar</button>
         </form>
     </div>
 </section>
 
+<!-- ÁREA DE CLIENTES -->
 <section id="area-clientes">
     <h2>Area de Clientes</h2>
     <div class="testimonios-grid">
@@ -336,6 +295,7 @@
     <div class="lista-comentarios" id="box-comentarios"></div>
 </section>
 
+<!-- FORMULARIO DE CONTACTO -->
 <section id="contacto">
     <h2>Contacto</h2>
     <div class="form-contacto">
@@ -359,6 +319,7 @@
     </div>
 </section>
 
+<!-- PIE DE PÁGINA -->
 <footer>
     <h3>Alma Serena</h3>
     <p>Tienda Esotérica • Ebooks • Recursos Espirituales</p>
@@ -367,6 +328,7 @@
     <button class="admin-toggle-btn" onclick="abrirAdmin()">⚙️ Acceso Administradora</button>
 </footer>
 
+<!-- PANEL DE ADMINISTRACIÓN CON ANALÍTICAS AVANZADAS -->
 <section id="panel-administracion">
     <h2 style="font-family:'Cinzel', serif; margin-bottom:10px;">🔮 Panel de Control Interno</h2>
     
@@ -384,10 +346,6 @@
             <p style="font-size:0.8rem; font-weight:600;">Mails de Contacto</p>
             <div class="metrica-numero" id="m-mail">0</div>
         </div>
-        <div class="metrica-card">
-            <p style="font-size:0.8rem; font-weight:600;">Cupones Usados</p>
-            <div class="metrica-numero" id="m-cup">0</div>
-        </div>
     </div>
 
     <div class="form-comentario" style="margin: 0; max-width: 100%;">
@@ -400,25 +358,25 @@
     </div>
 </section>
 
+<!-- BOTÓN DE WHATSAPP FLOTANTE -->
 <a class="whatsapp" href="https://wa.me/5493424483036" target="_blank" onclick="trackearMetrica('clics_whatsapp')">
     💬 WhatsApp
 </a>
 
+<!-- MOTOR INTERNO DE DATOS DE ALMA SERENA -->
 <script>
     const WHATSAPP_CELULAR = "5493424483036"; 
-    let descuentoActivo = 0;
 
+    // 📋 MANEJÁ LOS PRECIOS EXCLUSIVAMENTE DESDE ACÁ
     const misProductos = [
       { "titulo": "Vela Ritualizada de Prosperidad", "descripcion": "Intencionada con hierbas y cristales para atraer abundancia.", "precio": "8.500", "imagen": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=500&q=80" },
       { "titulo": "Kit de Sahumado Ancestral", "descripcion": "Incluye sahumador de barro, hierbas de limpieza y carbones.", "precio": "12.000", "imagen": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80" },
       { "titulo": "Piedra Amatista Natural", "descripcion": "Ideal para transmutar energías y colocar en tu altar o mesa de luz.", "precio": "4.200", "imagen": "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?auto=format&fit=crop&w=500&q=80" }
     ];
 
-    const cuponesDisponibles = { "MAGIA10": 10, "BRUJA20": 20, "BIENVENIDA": 15 };
-
     function iniciarMetricas() {
         if (!localStorage.getItem('analitica_alma_serena')) {
-            localStorage.setItem('analitica_alma_serena', JSON.stringify({ clics_whatsapp: 0, newsletter: 0, mensajes_contacto: 0, cupones: 0 }));
+            localStorage.setItem('analitica_alma_serena', JSON.stringify({ clics_whatsapp: 0, newsletter: 0, mensajes_contacto: 0 }));
         }
         actualizarPantallaMetricas();
     }
@@ -439,10 +397,9 @@
     function actualizarPantallaMetricas() {
         let datos = JSON.parse(localStorage.getItem('analitica_alma_serena'));
         if(datos) {
-            document.getElementById('m-wa').innerText = datos.clics_whatsapp || 0;
-            document.getElementById('m-news').innerText = datos.newsletter || 0;
-            document.getElementById('m-mail').innerText = datos.mensajes_contacto || 0;
-            document.getElementById('m-cup').innerText = datos.cupones || 0;
+            if(document.getElementById('m-wa')) document.getElementById('m-wa').innerText = datos.clics_whatsapp || 0;
+            if(document.getElementById('m-news')) document.getElementById('m-news').innerText = datos.newsletter || 0;
+            if(document.getElementById('m-mail')) document.getElementById('m-mail').innerText = datos.mensajes_contacto || 0;
         }
     }
 
@@ -458,38 +415,16 @@
         actualizarPuntosVisual();
     }
 
-    function validarCupon() {
-        const input = document.getElementById('input-cupon').value.trim().toUpperCase();
-        const mensaje = document.getElementById('mensaje-cupon');
-        if (cuponesDisponibles[input]) {
-            descuentoActivo = cuponesDisponibles[input];
-            mensaje.style.color = "#25d366";
-            mensaje.innerHTML = "¡Cupón activado! " + descuentoActivo + "% de descuento aplicado.";
-            trackearMetrica('cupones');
-            cargarCatalogo();
-        } else {
-            mensaje.style.color = "#ff4d4d";
-            mensaje.innerHTML = "Cupón inválido.";
-        }
-    }
-
     function cargarCatalogo() {
         const contenedor = document.getElementById('contenedor-productos');
         contenedor.innerHTML = ''; 
         misProductos.forEach(prod => {
-            let precioFinalStr = prod.precio;
-            let textoCup = "";
-            if (descuentoActivo > 0) {
-                let precioNumero = parseFloat(prod.precio.replace(/\./g, ''));
-                precioFinalStr = Math.round(precioNumero - (precioNumero * (descuentoActivo / 100))).toLocaleString('es-AR');
-                textoCup = " (Cupón " + descuentoActivo + "%)";
-            }
-            const mensajeCompleto = encodeURIComponent("Hola Alma Serena! Me interesa el producto: " + prod.titulo + ". Precio: $" + precioFinalStr + textoCup);
+            const mensajeCompleto = encodeURIComponent("Hola Alma Serena! Me interesa el producto: " + prod.titulo + ". Precio: $" + prod.precio);
             contenedor.innerHTML += '<div class="card">' +
                 '<img src="' + prod.imagen + '" alt="' + prod.titulo + '" class="producto-imagen">' +
                 '<h3>' + prod.titulo + '</h3>' +
                 '<p style="color:#666; font-size:0.9rem; margin-top:5px;">' + prod.descripcion + '</p>' +
-                '<p class="producto-precio">$' + precioFinalStr + '</p>' +
+                '<p class="producto-precio">$' + prod.precio + '</p>' +
                 '<a href="https://wa.me/' + WHATSAPP_CELULAR + '?text=' + mensajeCompleto + '" target="_blank" class="btn-comprar" onclick="sumarPuntosFidelidad()">' +
                     '🔮 Encargar por WhatsApp' +
                 '</a>' +
