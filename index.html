@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alma Serena | Tienda Esotérica</title>
+    <title>Alma Serena | Catálogo Mayorista Esotérico</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,36 +16,52 @@
         
         header { background-color: #1a1510; color: #fcfbf7; padding: 40px 20px; text-align: center; border-bottom: 3px solid #8a6a2d; }
         header h1 { font-family: 'Cinzel', serif; font-size: 2.5rem; letter-spacing: 3px; color: #d4af37; margin-bottom: 10px; }
-        header p { font-size: 1rem; letter-spacing: 1px; opacity: 0.9; }
+        header p { font-size: 1.1rem; letter-spacing: 1px; opacity: 0.9; color: #f0ecdf; }
 
         section { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
-        section h2 { font-family: 'Cinzel', serif; text-align: center; font-size: 2rem; color: #1a1510; margin-bottom: 30px; }
-        section h2::after { content: ''; display: block; width: 60px; height: 2px; background-color: #8a6a2d; margin: 10px auto 0; }
+        
+        .titulo-seccion { font-family: 'Cinzel', serif; text-align: center; font-size: 2rem; color: #1a1510; margin-top: 20px; margin-bottom: 30px; }
+        .titulo-seccion::after { content: ''; display: block; width: 60px; height: 2px; background-color: #8a6a2d; margin: 10px auto 0; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 20px; }
-        .card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #f0ecdf; position: relative; }
+        /* --- POLÍTICAS DE COMPRA --- */
+        .politicas-box { background: #fdfaf2; border-left: 5px solid #8a6a2d; padding: 25px; border-radius: 4px; margin-bottom: 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .politicas-box h3 { font-family: 'Cinzel', serif; color: #1a1510; margin-bottom: 12px; font-size: 1.2rem; }
+        .politicas-box ul { list-style: none; }
+        .politicas-box li { margin-bottom: 8px; font-size: 0.95rem; position: relative; padding-left: 20px; }
+        .politicas-box li::before { content: '✨'; position: absolute; left: 0; top: 1px; font-size: 0.85rem; }
+
+        /* --- GRID DEL CATALOGO --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin-top: 20px; }
+        .card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); text-align: center; border: 1px solid #f0ecdf; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-3px); }
         
-        .producto-imagen { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; background-color: #f0ecdf; }
-        .card h3 { font-family: 'Cinzel', serif; font-size: 1.2rem; color: #1a1510; margin-bottom: 10px; }
-        .producto-precio { font-size: 1.4rem; font-weight: bold; color: #8a6a2d; margin: 15px 0; }
+        .producto-imagen { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; margin-bottom: 12px; background-color: #f5f2e9; }
+        .card h3 { font-family: 'Cinzel', serif; font-size: 1.1rem; color: #1a1510; margin-bottom: 8px; height: 45px; display: flex; align-items: center; justify-content: center; }
+        .producto-desc { color: #666; font-size: 0.85rem; margin-bottom: 12px; height: 36px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .producto-precio { font-size: 1.3rem; font-weight: bold; color: #8a6a2d; margin-bottom: 15px; }
         
-        .btn-comprar { display: block; width: 100%; padding: 12px; background: #8a6a2d; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.9rem; margin-bottom: 8px; }
+        .btn-comprar { display: block; width: 100%; padding: 10px; background: #8a6a2d; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; }
         .btn-comprar:hover { background: #705524; }
         
-        .btn-borrar { background: #c0392b; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; margin-top: 10px; display: none; width: 100%; }
+        .btn-borrar { background: #c0392b; color: white; border: none; padding: 6px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; margin-top: 8px; display: none; width: 100%; }
 
-        .newsletter-box, .contacto-box { background: #f0ecdf; padding: 30px 20px; border-radius: 12px; text-align: center; margin: 30px auto; max-width: 800px; border: 1px solid #e1dbcb; }
-        .newsletter-box h3, .contacto-box h3 { font-family: 'Cinzel', serif; margin-bottom: 12px; }
-        .btn-whatsapp-directo { display: inline-block; padding: 12px 25px; background-color: #8a6a2d; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 15px; }
+        /* --- EXTRAS --- */
+        .minimos-box { background: #1a1510; color: #fcfbf7; padding: 35px 25px; border-radius: 8px; margin: 40px auto; max-width: 900px; border-top: 4px solid #d4af37; }
+        .minimos-box h3 { font-family: 'Cinzel', serif; color: #d4af37; margin-bottom: 20px; text-align: center; }
+        .minimos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; font-size: 0.85rem; opacity: 0.9; }
 
-        #panel-administracion { display: none; background: #e6e1d3; border: 2px solid #8a6a2d; padding: 25px; border-radius: 12px; margin: 30px auto; max-width: 600px; }
+        .contacto-box { background: #f0ecdf; padding: 30px 20px; border-radius: 8px; text-align: center; margin: 40px auto; max-width: 800px; border: 1px solid #e1dbcb; }
+        .contacto-box h3 { font-family: 'Cinzel', serif; margin-bottom: 10px; }
+        .btn-whatsapp-directo { display: inline-block; padding: 12px 25px; background-color: #8a6a2d; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 15px; }
+
+        #panel-administracion { display: none; background: #e6e1d3; border: 2px solid #8a6a2d; padding: 25px; border-radius: 8px; margin: 40px auto; max-width: 600px; }
         .form-group { margin-bottom: 15px; text-align: left; }
         .form-group label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 0.9rem; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-family: inherit; }
-        .btn-submit { width: 100%; padding: 12px; background-color: #1a1510; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+        .form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        .btn-submit { width: 100%; padding: 12px; background-color: #1a1510; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
         
         footer { background-color: #1a1510; color: white; text-align: center; padding: 30px 20px; margin-top: 40px; }
-        .admin-toggle-btn { background: none; border: none; color: #d4af37; font-size: 0.85rem; cursor: pointer; margin-top: 15px; text-decoration: underline; }
+        .admin-toggle-btn { background: none; border: none; color: #d4af37; font-size: 0.8rem; cursor: pointer; margin-top: 15px; text-decoration: underline; }
         .whatsapp { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
     </style>
 </head>
@@ -53,76 +69,181 @@
 
 <header>
     <h1>Alma Serena</h1>
-    <p>Tienda Esotérica & El Rincón del Hechicero</p>
+    <p>🔮 Lista de Precios Mayorista — El Rincón del Hechicero</p>
 </header>
 
-<!-- CATÁLOGO -->
-<section id="productos">
-    <h2>Catálogo de Productos</h2>
+<section>
+    <!-- CONDICIONES COMERCIALES -->
+    <div class="politicas-box">
+        <h3>📋 Condiciones de Compra & Armado</h3>
+        <ul>
+            <li><strong>Tiempo de Armado:</strong> El período estimado de demora es de 7 a 10 días hábiles una vez confirmado el presupuesto.</li>
+            <li><strong>Forma de Pago:</strong> Se deberá abonar el 30% del monto total para comenzar el armado del pedido.</li>
+            <li><strong>Saldo Faltante:</strong> El 70% restante se abona dentro de los 15 días posteriores a la notificación de que el pedido está listo.</li>
+            <li><strong>Cancelaciones:</strong> Pasados los 15 días sin abonar el saldo, se pierde la seña y se da de baja el pedido. Si el cliente decide cancelar luego de aprobado el presupuesto, también pierde la seña.</li>
+        </ul>
+    </div>
+
+    <!-- SECCIÓN PRINCIPAL DEL CATÁLOGO -->
+    <h2 class="titulo-seccion">Catálogo Mayorista</h2>
     <div class="grid" id="contenedor-productos"></div>
 </section>
 
-<!-- NEWSLETTER -->
-<section id="seccion-newsletter">
-    <div class="newsletter-box">
-        <h3>📬 El Rincón del Hechicero (Newsletter)</h3>
-        <p>Recibí gratis cada semana rituales, tips de astrología y promociones exclusivas directamente en tu WhatsApp.</p>
-        <a id="btn-newsletter-wa" href="#" target="_blank" class="btn-whatsapp-directo">✨ Unirme al Altar por WhatsApp</a>
+<!-- EXTRAS: REQUISITOS MÍNIMOS -->
+<section>
+    <div class="minimos-box">
+        <h3>📦 Mínimos de Compra por Producto</h3>
+        <div class="minimos-grid">
+            <div>• Velas Largas Lisas: 100 unidades</div>
+            <div>• Velas Largas Combinadas: 100 unidades</div>
+            <div>• Velas Largas 7 Colores: 50 unidades</div>
+            <div>• Velas Cortas Lisas: 100 unidades</div>
+            <div>• Velas Cortas Combinadas/7 Col.: 50 un.</div>
+            <div>• Velas de Forma: 5 un. por modelo</div>
+            <div>• Velones 7 Días (Liso/Combi): 10 unidades</div>
+            <div>• Velones 7 Colores / Dorado / Plata: 5 un.</div>
+            <div>• Sahumerios Triple Empaste: 5 paquetes</div>
+            <div>• Sahumerios Sagrada Madre: 10 unidades</div>
+            <div>• Sahumerios Aromanza/Hindú/Dhoop: 10 un.</div>
+            <div>• Fluidos / Esencias / Lociones: 10 unidades</div>
+            <div>• Imágenes (15cm y 20cm): 5 un. por modelo</div>
+            <div>• Pulseras: 10 unidades</div>
+            <div>• Resinas: 1/4 Kilo | Palo Santo: 1 Kilo</div>
+        </div>
     </div>
 </section>
 
-<!-- CONTACTO -->
+<!-- CONTACTO COMPLETO -->
 <section id="contacto">
-    <h2>Contacto</h2>
     <div class="contacto-box">
-        <h3>🔮 ¿Tenés dudas o consultas?</h3>
-        <p>Chateá directamente conmigo. Te asesoro de forma personalizada con la mejor energía.</p>
-        <a id="btn-contacto-wa" href="#" target="_blank" class="btn-whatsapp-directo">💬 Chatear por WhatsApp</a>
+        <h3>🔮 ¿Querés armar tu presupuesto?</h3>
+        <p>Hacé clic acá abajo para enviarme tu pedido detallado o consultarme tus dudas por WhatsApp.</p>
+        <a id="btn-contacto-wa" href="#" target="_blank" class="btn-whatsapp-directo">💬 Enviar Pedido por WhatsApp</a>
     </div>
 </section>
 
-<!-- PIE DE PÁGINA -->
 <footer>
     <h3>Alma Serena</h3>
-    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">© 2026 Todos los derechos reservados.</p>
+    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 5px;">© 2026 Catálogo Mayorista.</p>
     <button class="admin-toggle-btn" onclick="abrirAdmin()">⚙️ Acceso Administradora</button>
 </footer>
 
-<!-- PANEL DE CONTROL SÚPER SIMPLE -->
+<!-- PANEL ADMIN -->
 <section id="panel-administracion">
-    <h3 style="font-family:'Cinzel', serif; margin-bottom:15px; text-align:center; color:#1a1510;">🔮 Gestor del Catálogo</h3>
-    
+    <h3 style="font-family:'Cinzel', serif; margin-bottom:15px; text-align:center; color:#1a1510;">🔮 Gestor de Productos</h3>
     <div class="form-group">
-        <label>Nombre del Producto</label>
-        <input type="text" id="admin-titulo" placeholder="Ej: Vela de Canela">
+        <label>Nombre del Producto / Modelo</label>
+        <input type="text" id="admin-titulo" placeholder="Ej: Vela Larga Lisa Blanca (Pack x100)">
     </div>
     <div class="form-group">
-        <label>Descripción Corta</label>
-        <input type="text" id="admin-descripcion" placeholder="Ej: Para atraer amor y armonía">
+        <label>Categoría o Tipo</label>
+        <input type="text" id="admin-descripcion" placeholder="Ej: Mayorista - Velas Largas">
     </div>
     <div class="form-group">
-        <label>Precio (Solo números)</label>
-        <input type="text" id="admin-precio" placeholder="Ej: 8500">
+        <label>Precio Mayorista (Solo números)</label>
+        <input type="text" id="admin-precio" placeholder="Ej: 25900">
     </div>
     <div class="form-group">
-        <label>Link de la Foto (Opcional)</label>
-        <input type="text" id="admin-imagen" placeholder="Pegá el enlace de la imagen acá">
+        <label>URL de Imagen (Opcional)</label>
+        <input type="text" id="admin-imagen" placeholder="Pega el enlace de la imagen">
     </div>
-    <button class="btn-submit" onclick="adminAgregarProducto()">✨ Visualizar en la Web</button>
+    <button class="btn-submit" onclick="adminAgregarProducto()">✨ Agregar al Catálogo</button>
 </section>
 
-<!-- WHATSAPP FLOTANTE -->
-<a id="btn-flotante-wa" class="whatsapp" href="#" target="_blank">💬 WhatsApp</a>
+<a id="btn-flotante-wa" class="whatsapp" href="#" target="_blank">💬 Pedido Web</a>
 
 <script>
     const WHATSAPP_CELULAR = "5493424483036";
-    
-    // --- NUEVA CONTRASEÑA ACTUALIZADA ---
     const CLAVE_ADMIN = "serena20261980$"; 
 
+    // BASE DE DATOS DE TU LISTA PROCESADA Y LIMPIA
     const productosBase = [
-      { "titulo": "Vela Ritualizada de Prosperidad", "descripcion": "Intencionada con hierbas y cristales para la abundancia.", "precio": "8.500", "imagen": "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=500&q=80" },
-      { "titulo": "Kit de Sahumado Ancestral", "descripcion": "Incluye sahumador de barro, hierbas de limpieza y carbones.", "precio": "12.000", "imagen": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=500&q=80" }
+      // VELAS LARGAS PACK 100
+      { "titulo": "Velas Largas Lisas (Blanca/Roja/Verde/Azul/Rosada/Amarilla/Marrón/Negra/Naranja/Violeta/Celeste)", "descripcion": "Pack x100 unidades - Mayorista", "precio": "25.900", "imagen": "" },
+      { "titulo": "Velas Largas Combinadas (San la Muerte/Cipriano/Cayetano/Expedito/Exu/Pompa gira/Jorge/Nicolas/Santa Rita/Catalina/Bárbara)", "descripcion": "Pack x100 unidades - Mayorista", "precio": "28.860", "imagen": "" },
+      { "titulo": "Velas Largas Doradas", "descripcion": "Pack x100 unidades - Mayorista", "precio": "37.800", "imagen": "" },
+      { "titulo": "Velas Largas 7 Colores", "descripcion": "Pack x100 unidades - Mayorista", "precio": "37.800", "imagen": "" },
+
+      // VELAS CORTAS PACK 100
+      { "titulo": "Velas Cortas Lisas (Todas las variedades)", "descripcion": "Pack x100 unidades - Mayorista", "precio": "18.900", "imagen": "" },
+      { "titulo": "Velas Cortas Combinadas (Expedito/Cayetano/Cipriano/La Muerte/Onofre/Desatanudos/Nicolás/San Jorge)", "descripcion": "Pack x100 unidades - Mayorista", "precio": "19.600", "imagen": "" },
+      { "titulo": "Velas Cortas 7 Colores", "descripcion": "Pack x100 unidades - Mayorista", "precio": "24.752", "imagen": "" },
+
+      // VELONES 7 DIAS
+      { "titulo": "Velones 7 Días Lisos (Blanco/Rojo/Verde/Azul/Amarillo/Negro/Naranja/Violeta/Rosado/Celeste)", "descripcion": "Pack x10 unidades - Mayorista", "precio": "28.600", "imagen": "" },
+      { "titulo": "Velones 7 Días Combinados (Santos/Entidades varias)", "descripcion": "Pack x10 unidades - Mayorista", "precio": "31.850", "imagen": "" },
+      { "titulo": "Velón 7 Días 7 Colores", "descripcion": "Precio por Unidad - Mayorista", "precio": "3.380", "imagen": "" },
+      { "titulo": "Velón 7 Días Dorado", "descripcion": "Precio por Unidad - Mayorista", "precio": "3.380", "imagen": "" },
+
+      // VELAS DE FORMA
+      { "titulo": "Vela de Forma: Hacha (San Jorge/Blanca/Azul/Amarilla/Roja/Negra)", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.298", "imagen": "" },
+      { "titulo": "Velón 7 Mechas (Negro/Blanco/Rojo)", "descripcion": "Precio por Unidad - Mayorista", "precio": "8.800", "imagen": "" },
+      { "titulo": "Velón 7 Mechas (San la Muerte/San Jorge/San Cipriano)", "descripcion": "Precio por Unidad - Mayorista", "precio": "9.300", "imagen": "" },
+      { "titulo": "Velón 7 Mechas 7 Colores / Dorado", "descripcion": "Precio por Unidad - Mayorista", "precio": "9.600", "imagen": "" },
+      { "titulo": "Vela de Forma: Llave (San Jorge/Cipriano/Expedito/Lisos)", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.266", "imagen": "" },
+      { "titulo": "Vela de Forma: Llave 7 Colores", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.799", "imagen": "" },
+      { "titulo": "Vela de Forma: Adán y Eva (Roja/Negra/Celeste y Rosada/Blanca)", "descripcion": "Precio por Unidad - Mayorista", "precio": "3.161", "imagen": "" },
+      { "titulo": "Vela de Forma: Vagina Plana (Negra/Roja)", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.657", "imagen": "" },
+      { "titulo": "Vela de Forma: Paloma", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.456", "imagen": "" },
+      { "titulo": "Vela de Forma: Puño 7 Colores", "descripcion": "Precio por Unidad - Mayorista", "precio": "2.220", "imagen": "" },
+      { "titulo": "Vela de Forma: Puño (San Jorge/San Cipriano/Negro)", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.710", "imagen": "" },
+      { "titulo": "Vela de Forma: Puño Dorado", "descripcion": "Precio por Unidad - Mayorista", "precio": "2.300", "imagen": "" },
+      { "titulo": "Vela de Forma: Sol y Luna", "descripcion": "Precio por Unidad - Mayorista", "precio": "2.710", "imagen": "" },
+      { "titulo": "Vela de Forma: Manzana", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.764", "imagen": "" },
+      { "titulo": "Vela de Forma: Tijera (Blanca/Roja/Negra/Amarilla/San Expedito)", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.354", "imagen": "" },
+      { "titulo": "Vela de Forma: Tijera 7 Colores", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.695", "imagen": "" },
+      { "titulo": "Vela de Forma: Ataúd Negro", "descripcion": "Precio por Unidad - Mayorista", "precio": "2.700", "imagen": "" },
+      { "titulo": "Vela de Forma: Hombre o Mujer (Blanco/Rojo/Negro)", "descripcion": "Precio por Unidad - Mayorista", "precio": "2.255", "imagen": "" },
+      { "titulo": "Vela de Forma: Entrelazada Roja", "descripcion": "Precio por Unidad - Mayorista", "precio": "2.550", "imagen": "" },
+      { "titulo": "Vela de Forma: Fetiche (Negro/Blanco/Rojo)", "descripcion": "Precio por Unidad - Mayorista", "precio": "3.675", "imagen": "" },
+      { "titulo": "Vela de Forma: Pene (Negro/Blanco/Rojo)", "descripcion": "Precio por Unidad - Mayorista", "precio": "4.107", "imagen": "" },
+      { "titulo": "Vela de Forma: Cráneo (Rojo/Negro/Blanco)", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.655", "imagen": "" },
+      { "titulo": "Vela de Forma: Cráneo Dorado", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.960", "imagen": "" },
+      { "titulo": "Vela de Forma: Nudo (Blanco/Rojo/San Jorge/San Cipriano/San Expedito)", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.787", "imagen": "" },
+      { "titulo": "Vela de Forma: Nudo 7 Colores / Dorado", "descripcion": "Precio por Unidad - Mayorista", "precio": "2.312", "imagen": "" },
+      { "titulo": "Vela de Forma: Corazón Doble Mecha Rojo", "descripcion": "Precio por Unidad - Mayorista", "precio": "2.088", "imagen": "" },
+      { "titulo": "Vela de Forma: Casa (Blanca/Roja/Negra/San Jorge)", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.986", "imagen": "" },
+      { "titulo": "Vela de Forma: Casa 7 Colores", "descripcion": "Precio por Unidad - Mayorista", "precio": "2.620", "imagen": "" },
+      { "titulo": "Vela de Forma: Serpiente Dos Cabezas Negra", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.985", "imagen": "" },
+      { "titulo": "Vela de Forma: Libro (Blanco/Azul)", "descripcion": "Precio por Unidad - Mayorista", "precio": "2.100", "imagen": "" },
+      { "titulo": "Vela de Forma: Espada (San Jorge/Expedito/Cipriano/Blanca)", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.486", "imagen": "" },
+      { "titulo": "Vela de Forma: Espada 7 Colores", "descripcion": "Precio por Unidad - Mayorista", "precio": "2.082", "imagen": "" },
+      { "titulo": "Vela de Forma: Signo Peso / Choclo / Moneda", "descripcion": "Modelos tradicionales - Mayorista", "precio": "1.504", "imagen": "" },
+      { "titulo": "Vela de Forma: Signo Peso/Choclo/Moneda (Versión Dorada)", "descripcion": "Modelos metalizados - Mayorista", "precio": "2.464", "imagen": "" },
+
+      // VELAS DE MIEL
+      { "titulo": "Velas de Miel con Resinas (Yagra/Ámbar/Incienso)", "descripcion": "Línea Consagrada - Mayorista", "precio": "3.000", "imagen": "" },
+
+      // IMAGENES
+      { "titulo": "Imágenes de Resina/Yeso 20 cm (Todos los Santos y Arcángeles)", "descripcion": "Precio por Unidad - Mayorista", "precio": "11.450", "imagen": "" },
+      { "titulo": "Imágenes de Resina/Yeso 15 cm (Gauchito/Benito/Expedito/Santos varios)", "descripcion": "Precio por Unidad - Mayorista", "precio": "6.350", "imagen": "" },
+
+      // FLUIDOS Y LOCIONES
+      { "titulo": "Fluidos Aromáticos 1 Litro (Abre Caminos, Descarga, Ruda, 7 Poderes)", "descripcion": "Bidón 1L - Mayorista", "precio": "1,950", "imagen": "" },
+      { "titulo": "Lociones Salem (Corderito Manso, Garrapata, Suerte Rápida, Vence Todo)", "descripcion": "Frasco - Mayorista", "precio": "1.950", "imagen": "" },
+      { "titulo": "Esencias Salem para Hornillo (Todas las fragancias)", "descripcion": "Precio por Unidad - Mayorista", "precio": "1.950", "imagen": "" },
+
+      // SAHUMERIOS
+      { "titulo": "Sahumerio Bangladesh Triple Empaste", "descripcion": "Paquete por 50 unidades - Mayorista", "precio": "2.900", "imagen": "" },
+      { "titulo": "Sahumerios Iluminarte India 7 Aromas", "descripcion": "Display x12 paquetes - Mayorista", "precio": "12.507", "imagen": "" },
+      { "titulo": "Sahumerios Ganesh Floral x 12u", "descripcion": "Caja cerrada - Mayorista", "precio": "20.038", "imagen": "" },
+      { "titulo": "Sahumerios Aromanza Momentos / Mágicos", "descripcion": "Fragancias variadas de la línea - Mayorista", "precio": "1.845", "imagen": "" },
+      { "titulo": "Sahumerios Hexagonales Daeshan x 6u", "descripcion": "Línea importada variedad de aromas - Mayorista", "precio": "7.111", "imagen": "" },
+      { "titulo": "Sahumerios Dhoop (Sin Palo) Caja x 12u", "descripcion": "Línea Premium (Mirra/Incienso/Lavanda) - Mayorista", "precio": "15.123", "imagen": "" },
+      { "titulo": "Sahumerio Aromanza Buena Onda x 8 (Línea Palo Santo)", "descripcion": "Precio por paquete - Mayorista", "precio": "1.158", "imagen": "" },
+      { "titulo": "Carbones para Sahumar (Caja x 36u)", "descripcion": "Caja completa para ritos - Mayorista", "precio": "1.863", "imagen": "" },
+      { "titulo": "Carbones para Sahumar (Caja x 60u)", "descripcion": "Caja grande - Mayorista", "precio": "4.601", "imagen": "" },
+      { "titulo": "Hornitos Cerámicos / Cartas de Tarot", "descripcion": "Modelos Rider/Marsellés/Egipcio - Mayorista", "precio": "6.211", "imagen": "" },
+
+      // PULSERAS
+      { "titulo": "Pulseras Místicas (Nudo de Bruja / 7 Nudos Roja / San Benito)", "descripcion": "Línea protección - Mayorista", "precio": "1.017", "imagen": "" },
+      { "titulo": "Pulseras Ojo Turco Hilo Simple", "descripcion": "Protección básica - Mayorista", "precio": "591", "imagen": "" },
+
+      // RESINAS
+      { "titulo": "Resinas Puras por 1/4 Kilo (Yagra de Primera)", "descripcion": "Bolsa 250g - Mayorista", "precio": "15.355", "imagen": "" },
+      { "titulo": "Resinas Puras por 1/4 Kilo (Mirra, Sándalo, Benjuí, Romero)", "descripcion": "Bolsa 250g - Mayorista", "precio": "6.705", "imagen": "" },
+      { "titulo": "Resinas Puras por 1/4 Kilo (Incienso Consagrado / Copal)", "descripcion": "Bolsa 250g - Mayorista", "precio": "9.500", "imagen": "" },
+      { "titulo": "Palo Santo Puro por 1 Kilo", "descripcion": "Madre sagrada seleccionada - Mayorista", "precio": "25.200", "imagen": "" }
     ];
 
     let isAdminAutenticado = false;
@@ -144,15 +265,21 @@
         const lista = obtenerProductos();
 
         lista.forEach((prod, index) => {
-            const mensajeCompleto = encodeURIComponent("¡Hola Alma Serena! Me interesa el producto: " + prod.titulo + " ($" + prod.precio + ")");
+            const imgUrl = prod.imagen || 'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=500&q=80';
+            const mensajeCompleto = encodeURIComponent("¡Hola Alma Serena! Quiero consultar por el producto: " + prod.titulo + " (Precio ref: $" + prod.precio + ")");
+            
             contenedor.innerHTML += `
                 <div class="card">
-                    <img src="${prod.imagen || 'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=500&q=80'}" class="producto-imagen">
-                    <h3>${prod.titulo}</h3>
-                    <p style="color:#666; font-size:0.9rem; margin-top:5px;">${prod.descripcion}</p>
-                    <p class="producto-precio">$${prod.precio}</p>
-                    <a href="https://wa.me/${WHATSAPP_CELULAR}?text=${mensajeCompleto}" target="_blank" class="btn-comprar">🔮 Encargar por WhatsApp</a>
-                    <button class="btn-borrar" id="btn-borrar-${index}" onclick="borrarProducto(${index})">🗑️ Eliminar Producto</button>
+                    <div>
+                        <img src="${imgUrl}" class="producto-imagen">
+                        <h3>${prod.titulo}</h3>
+                        <p class="producto-desc">${prod.descripcion}</p>
+                    </div>
+                    <div>
+                        <p class="producto-precio">$${prod.precio}</p>
+                        <a href="https://wa.me/${WHATSAPP_CELULAR}?text=${mensajeCompleto}" target="_blank" class="btn-comprar">🔮 Consultar / Encargar</a>
+                        <button class="btn-borrar" id="btn-borrar-${index}" onclick="borrarProducto(${index})">🗑️ Eliminar</button>
+                    </div>
                 </div>
             `;
             
@@ -181,7 +308,7 @@
         }
 
         const lista = obtenerProductos();
-        lista.push({ "titulo": t, "descripcion": d || "Producto místico.", "precio": p, "imagen": i });
+        lista.push({ "titulo": t, "descripcion": d || "Mayorista", "precio": p, "imagen": i });
         localStorage.setItem('productos_alma_serena', JSON.stringify(lista));
         
         document.getElementById('admin-titulo').value = '';
@@ -190,13 +317,12 @@
         document.getElementById('admin-imagen').value = '';
         
         cargarCatalogo();
-        alert("¡Producto agregado con éxito al catálogo!");
+        alert("¡Agregado con éxito!");
     }
 
     function borrarProducto(index) {
         if(!isAdminAutenticado) return;
-        
-        if(confirm("¿Segura que querés borrar este producto del catálogo?")) {
+        if(confirm("¿Segura que querés borrar este renglón de la lista?")) {
             const lista = obtenerProductos();
             lista.splice(index, 1);
             localStorage.setItem('productos_alma_serena', JSON.stringify(lista));
@@ -210,8 +336,7 @@
         if (panel.style.display === "block") {
             panel.style.display = "none";
             isAdminAutenticado = false;
-            const botonesBorrar = document.querySelectorAll('.btn-borrar');
-            botonesBorrar.forEach(btn => btn.style.display = "none");
+            document.querySelectorAll('.btn-borrar').forEach(btn => btn.style.display = "none");
             return;
         }
 
@@ -220,20 +345,17 @@
         if (intentoClave === CLAVE_ADMIN) {
             isAdminAutenticado = true;
             panel.style.display = "block";
-            
-            const botonesBorrar = document.querySelectorAll('.btn-borrar');
-            botonesBorrar.forEach(btn => btn.style.display = "block");
-            
+            document.querySelectorAll('.btn-borrar').forEach(btn => btn.style.display = "block");
             panel.scrollIntoView({ behavior: 'smooth' });
         } else if (intentoClave !== null) {
-            alert("❌ Contraseña incorrecta. Acceso denegado.");
+            alert("❌ Contraseña incorrecta.");
         }
     }
 
     function configurarEnlaces() {
-        document.getElementById('btn-newsletter-wa').href = "https://wa.me/" + WHATSAPP_CELULAR + "?text=" + encodeURIComponent("¡Hola! Me gustaría unirme al Newsletter semanal ✨");
-        document.getElementById('btn-contacto-wa').href = "https://wa.me/" + WHATSAPP_CELULAR + "?text=" + encodeURIComponent("¡Hola! Tengo una consulta sobre un producto 🔮");
-        document.getElementById('btn-flotante-wa').href = "https://wa.me/" + WHATSAPP_CELULAR + "?text=" + encodeURIComponent("¡Hola Alma Serena! Vengo desde la web 💻");
+        const textoContacto = encodeURIComponent("¡Hola Alma Serena! Vengo desde el catálogo web para armar un presupuesto mayorista 🔮");
+        document.getElementById('btn-contacto-wa').href = "https://wa.me/" + WHATSAPP_CELULAR + "?text=" + textoContacto;
+        document.getElementById('btn-flotante-wa').href = "https://wa.me/" + WHATSAPP_CELULAR + "?text=" + textoContacto;
     }
 
     document.addEventListener('DOMContentLoaded', function() {
